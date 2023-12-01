@@ -9,13 +9,14 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    align-items: flex-start;
     max-width: 500px;
     margin: 0 auto;
-    background-color: #ffcdb2;
 }
 
 .container{
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -25,7 +26,6 @@ body {
 
 h1 {
     font-size: large;
-    color: #e7c6ff;
     margin: 30px 0;
 }
 
@@ -34,10 +34,29 @@ form {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    height: 300px;
+    height: 300px ;
     width: 400px;
     border-radius: 50px;
-    background: rgb(166,183,221);
-    background: radial-gradient(circle, rgba(166,183,221,1) 0%, rgba(235,182,246,1) 35%, rgba(151,187,194,1) 100%);
-    box-shadow: 20 20 60 #e7c6ff;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 22%, rgba(148,187,233,1) 100%);
+    box-shadow: 20px 20px 60px #999;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background-color: #fff;
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+button[type="submit"] {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
 }

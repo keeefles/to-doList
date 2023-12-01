@@ -13,3 +13,31 @@ body {
     margin: 0 auto;
     background-color: #ffcdb2;
 }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    font-size: large;
+    color: #e7c6ff;
+    margin: 30px 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 300px;
+    width: 400px;
+    border-radius: 50px;
+    background: rgb(166,183,221);
+    background: radial-gradient(circle, rgba(166,183,221,1) 0%, rgba(235,182,246,1) 35%, rgba(151,187,194,1) 100%);
+    box-shadow: 20 20 60 #e7c6ff;
+}

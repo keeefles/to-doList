@@ -1,28 +1,32 @@
 let form = document.getElementById('form');
-let input1 = document.getElementById('task')
-let tasks = document.getElementById('tasks');
+let input1 = document.getElementById('input1');
+let taskList =[]
+let taskBox = document.querySelector('#tasks')
 
-let button = document.querySelector('[data-add]').addEventListener('submit', addTask);
+let button = document.querySelector('[data-add]')
+button.addEventListener('click', addTask)
 
 function addTask(e) {
-    e.preventDefault();
-        if(input1.value == '')
-    {
-        return;
-    }
+    // e.preventDefault();
+    //     if(input1.value == '')
+    // {
+    //     return;
+    // }
+    let input1 = document.querySelector('#input1').value 
+    taskList.push(input1)
+     taskBox.innerHTML += `
+        <input type="checkbox">
+        <p>${input1}</p>
+        <button type="button">Delete</button>
+        `;
 
-let task = document.createElement('li');
-task.innerHTML =
-    `<input type="checkbox">
-        <p>${input1.value}</p>
-        <button type="button">Delete</button>`
+task.querySelector('input[text="checkbox"]').addEventListener('change', toggleDone);
 
-task.querySelector('input[text="checkbox"]').addEventListener('change', doneButton);
-
-tasks.querySelector('button').addEventListener('click', removeTask);
+task.querySelector('button').addEventListener('click', removeTask);
 
 tasks.appendChild(task);
-taskInput.value = '';
+
+input1.value = '';
 }
 
 function toggleDone(e) {
@@ -32,5 +36,5 @@ function toggleDone(e) {
 
 function removeTask(e) {
     let task = e.target.parentNode;
-    tasks.removeChild(task)
+    tasks.removeChild(task);
 }

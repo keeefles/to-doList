@@ -20,21 +20,22 @@ function addTask(e) {
         <button type="button">Delete</button>
         `;
 
-task.querySelector('input[text="checkbox"]').addEventListener('change', toggleDone);
+        
+        task.querySelector('button').addEventListener('click', removeTask);
+        
+        tasks.appendChild(task);
+        
+        input1.value = '';
+    }
+    
+    function toggleDone(e) {
+        let task = e.target.parentNode;
+        task.querySelector('p').classlist.toggle('done');
 
-task.querySelector('button').addEventListener('click', removeTask);
-
-tasks.appendChild(task);
-
-input1.value = '';
-}
-
-function toggleDone(e) {
-    let task = e.target.parentNode;
-    task.querySelector('p').classlist.toggle('done');
+        task.querySelector('input[text="checkbox"]').addEventListener('change', toggleDone);
 }
 
 function removeTask(e) {
     let task = e.target.parentNode;
-    tasks.removeChild(task);
+    taskBox.removeChild(task);
 }

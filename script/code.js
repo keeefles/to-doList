@@ -39,3 +39,23 @@ function removeTask(e) {
     let task = e.target.parentNode;
     taskBox.removeChild(task);
 }
+
+ function sortList() {
+    let tasks = document.getElementById("input1");
+    let task = task.getElementsByTagName("li");
+    
+    // Convert HTMLCollection to array
+    let taskArray = Array.from(task);
+
+    // Sort the array alphabetically
+    taskArray.sort(function(a, b) {
+      return a.textContent.localeCompare(b.textContent);
+    });
+
+    // Clear the list
+    task.innerHTML = "";
+
+    itemsArray.forEach(function(task) {
+      list.appendChild(task);
+    });
+  }
